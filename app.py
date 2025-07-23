@@ -53,7 +53,7 @@ Content: {content}
             temperature=0.3
         )
         output = response.choices[0].message.content.strip()
-        summary, priority, urgency = "N/A", "Low", 5
+        summary, priority, urgency = "N/A", "Low", 6
 
         for line in output.splitlines():
             if line.lower().startswith("summary:"):
@@ -66,7 +66,7 @@ Content: {content}
                 try:
                     urgency = int(line.split(":", 1)[1].strip())
                 except:
-                    urgency = 5
+                    urgency = 6
 
         return summary, priority, urgency
     except Exception as e:
